@@ -3,14 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check-in Vitalflex</title>
     <link rel="stylesheet" href="styles.css">
-    <title>Check-in do Evento</title>
+    <style>
+        /* Estilos básicos */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+            margin: 0;
+        }
+        
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        /* Estilo do logo */
+        #logo {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+
+        /* Estilo do título */
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Estilo da caixa de texto */
+        .input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 2px solid #ddd;
+            border-radius: 25px;
+            font-size: 16px;
+        }
+
+        /* Estilo do botão */
+        .btn-checkin {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .btn-checkin:hover {
+            background-color: #218838;
+        }
+
+        /* Mensagem de feedback */
+        .mensagem {
+            margin-top: 20px;
+            color: green;
+            font-size: 18px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <h1>Check-in do Evento</h1>
-        <p>Bem-vindo à página de check-in do evento!</p>
+        <!-- Logo -->
+        <img src="logo.png" alt="Logo Vitalflex" id="logo">
+
+        <!-- Título -->
+        <h1>CHECK IN VITALFLEX</h1>
+
+        <!-- Campo para inserir o código -->
+        <input type="text" id="codigo" placeholder="Digite seu código" class="input">
+
+        <!-- Botão de Check-In -->
+        <button onclick="realizarCheckIn()" class="btn-checkin">Realizar Check-in</button>
+
+        <!-- Mensagem de feedback -->
+        <p id="mensagem"></p>
     </div>
-    <script src="script.js"></script>
+
+    <!-- Script de funcionalidade -->
+    <script>
+        function realizarCheckIn() {
+            const codigo = document.getElementById('codigo').value;
+            const mensagem = document.getElementById('mensagem');
+
+            // Simulação de verificação do código
+            if (codigo === '12345') { // Altere essa condição conforme o código esperado
+                mensagem.innerText = 'Check realizado com sucesso!';
+                mensagem.style.color = 'green';
+
+                // Abre uma nova aba com a mensagem de check-in realizado
+                const novaJanela = window.open("", "_blank");
+                novaJanela.document.write("<h1>CHECK REALIZADO</h1>");
+            } else {
+                mensagem.innerText = 'Código inválido. Tente novamente.';
+                mensagem.style.color = 'red';
+            }
+        }
+    </script>
 </body>
 </html>

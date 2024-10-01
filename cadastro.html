@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Vitalflex</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Cadastro Manual</h1>
+
+        <!-- Nome -->
+        <label for="nome">Nome Completo</label><br>
+        <input type="text" id="nome" placeholder="Nome Completo" class="input"><br><br>
+
+        <!-- Telefone -->
+        <label for="telefone">Telefone</label><br>
+        <input type="text" id="telefone" placeholder="Telefone" class="input"><br><br>
+
+        <!-- E-mail -->
+        <label for="email">E-mail</label><br>
+        <input type="email" id="email" placeholder="E-mail" class="input"><br><br>
+
+        <!-- Lista Suspensa para Posição -->
+        <label for="posicao">Selecione sua Posição</label><br>
+        <select id="posicao" class="input">
+            <option value="Distribuidor">Distribuidor</option>
+            <option value="Consultor">Consultor</option>
+            <option value="Gerente">Gerente</option>
+            <option value="Outro">Outro</option>
+        </select><br><br>
+
+        <!-- Botão para realizar cadastro -->
+        <button onclick="realizarCadastro()" class="btn-checkin">Realizar Cadastro</button>
+
+        <!-- Mensagem de confirmação -->
+        <p id="mensagemCadastro"></p>
+    </div>
+
+    <!-- Script para o cadastro -->
+    <script src="script.js"></script>
+</body>
+</html>
